@@ -1,0 +1,47 @@
+# Android
+**/build/
+*.iml
+.gradle
+local.properties
+.externalNativeBuild
+.cxx
+captures/
+*.apk
+*.aar
+*.jks
+*.keystore
+
+# Android Studio
+.idea/
+*.iws
+*.ipr
+out/
+
+# Kotlin Multiplatform
+.kotlin/
+
+# Xcode
+**/iosApp/build/
+**/iosApp/DerivedData/
+*.xcuserstate
+*.xcresult
+*.xcscheme
+xcuserdata/
+*.xccheckout
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.xcscheme
+*.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+*.xcodeproj/
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# OS / Miscellaneous
+.DS_Store
+Thumbs.db
+node_modules/
+*.log

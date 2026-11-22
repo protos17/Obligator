@@ -1,0 +1,277 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "5a384391ab3805017d862d7abda0cb4d",
+    "entities": [
+      {
+        "tableName": "bond",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`secid` TEXT NOT NULL, `boardId` TEXT NOT NULL, `isin` TEXT, `shortName` TEXT NOT NULL, `secType` TEXT, `faceValue` REAL NOT NULL, `price` REAL, `accruedInt` REAL, `yieldToMaturity` REAL, `duration` INTEGER, `couponPercent` REAL, `couponValue` REAL, `couponPeriod` INTEGER, `nextCoupon` TEXT, `matDate` TEXT, `offerDate` TEXT, `yieldKind` TEXT, `couponDetails` TEXT, `bondType` TEXT, `listLevel` INTEGER, PRIMARY KEY(`secid`))",
+        "fields": [
+          {
+            "fieldPath": "secid",
+            "columnName": "secid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "boardId",
+            "columnName": "boardId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isin",
+            "columnName": "isin",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "shortName",
+            "columnName": "shortName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "secType",
+            "columnName": "secType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "faceValue",
+            "columnName": "faceValue",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "accruedInt",
+            "columnName": "accruedInt",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "yieldToMaturity",
+            "columnName": "yieldToMaturity",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "duration",
+            "columnName": "duration",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "couponPercent",
+            "columnName": "couponPercent",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "couponValue",
+            "columnName": "couponValue",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "couponPeriod",
+            "columnName": "couponPeriod",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "nextCoupon",
+            "columnName": "nextCoupon",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "matDate",
+            "columnName": "matDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "offerDate",
+            "columnName": "offerDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "yieldKind",
+            "columnName": "yieldKind",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "couponDetails",
+            "columnName": "couponDetails",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "bondType",
+            "columnName": "bondType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "listLevel",
+            "columnName": "listLevel",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "secid"
+          ]
+        }
+      },
+      {
+        "tableName": "update_info",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `loadedAt` INTEGER NOT NULL, `priceDate` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "loadedAt",
+            "columnName": "loadedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priceDate",
+            "columnName": "priceDate",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "favorite",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`secid` TEXT NOT NULL, `shortName` TEXT NOT NULL, `addedAt` INTEGER NOT NULL, PRIMARY KEY(`secid`))",
+        "fields": [
+          {
+            "fieldPath": "secid",
+            "columnName": "secid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shortName",
+            "columnName": "shortName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "addedAt",
+            "columnName": "addedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "secid"
+          ]
+        }
+      },
+      {
+        "tableName": "portfolio_position",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`secid` TEXT NOT NULL, `shortName` TEXT NOT NULL, `quantity` INTEGER NOT NULL, `addedAt` INTEGER NOT NULL, PRIMARY KEY(`secid`))",
+        "fields": [
+          {
+            "fieldPath": "secid",
+            "columnName": "secid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shortName",
+            "columnName": "shortName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "addedAt",
+            "columnName": "addedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "secid"
+          ]
+        }
+      },
+      {
+        "tableName": "payment",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `secid` TEXT NOT NULL, `payDate` TEXT NOT NULL, `kind` TEXT NOT NULL, `amount` REAL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "secid",
+            "columnName": "secid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payDate",
+            "columnName": "payDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "REAL"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_payment_secid_payDate",
+            "unique": false,
+            "columnNames": [
+              "secid",
+              "payDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_payment_secid_payDate` ON `${TABLE_NAME}` (`secid`, `payDate`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5a384391ab3805017d862d7abda0cb4d')"
+    ]
+  }
+}
