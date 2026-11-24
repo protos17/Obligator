@@ -1,6 +1,5 @@
 package ru.protos.obligator.di
 
-import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
@@ -13,13 +12,14 @@ import ru.protos.obligator.data.db.AppDatabase
 import ru.protos.obligator.data.db.getRoomDatabase
 import ru.protos.obligator.data.iss.IssApiClient
 import ru.protos.obligator.data.iss.IssParser
+import ru.protos.obligator.data.network.createPlatformHttpClient
 import ru.protos.obligator.data.repository.BondRepositoryImpl
 import ru.protos.obligator.data.repository.FavoriteRepositoryImpl
 import ru.protos.obligator.data.repository.PortfolioRepositoryImpl
 
 val dataModule = module {
     single {
-        HttpClient {
+        createPlatformHttpClient {
             install(HttpTimeout) {
                 connectTimeoutMillis = 10_000L
                 requestTimeoutMillis = 30_000L
