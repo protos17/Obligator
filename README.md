@@ -5,7 +5,7 @@
 ## Архитектура проекта
 
 - `analytics/`: Модуль domain (модели `Bond`, `Payment`, `PortfolioPosition`, `FavoriteItem`, `BondFilter`, интерфейсы репозиториев и функции расчетов). Чистый Kotlin Multiplatform без Compose/Ktor/Room.
-- `shared/`: Модуль data & presentation (клиент MOEX ISS API, база данных Room 3, репозитории, ViewModels, Compose UI экраны, Koin DI).
+- `shared/`: Модуль data & presentation (клиент MOEX ISS API, база данных Room, репозитории, ViewModels, Compose UI экраны, Koin DI).
 - `androidApp/`: Модуль Android Activity & Application.
 - `iosApp/`: Xcode-проект приложения iOS.
 
